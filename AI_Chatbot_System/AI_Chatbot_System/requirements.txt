@@ -1,0 +1,94 @@
+# ============================================================
+# AI Chatbot System — requirements.txt
+# Matches: AI_Chatbot_System_Folder_Structure_and_Workflow.docx
+# Tags follow the same [MVP] / [P2] / [P3] phases as the build plan
+# ============================================================
+
+# ---------- [MVP] Core API (Wk1) ----------
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.4
+pydantic-settings==2.3.4
+python-dotenv==1.0.1
+
+# ---------- [MVP] LLM Providers (Wk2) — models/ ----------
+openai==1.35.3
+anthropic==0.28.0
+huggingface-hub==0.23.4
+transformers==4.42.3
+
+# ---------- [MVP] RAG pipeline (Wk3-4) — rag/ ----------
+langchain==0.2.6
+langchain-community==0.2.6
+chromadb==0.5.3
+qdrant-client==1.9.1
+sentence-transformers==3.0.1
+pypdf==4.2.0
+tiktoken==0.7.0
+unstructured==0.14.9
+
+# ---------- [MVP] Auth & Security (Wk5) — security/ ----------
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+
+# ---------- [MVP] Database (Wk1, Wk5) — database/ ----------
+sqlalchemy==2.0.31
+psycopg2-binary==2.9.9
+redis==5.0.6
+alembic==1.13.2
+
+# ---------- [MVP] Testing (Wk6) — tests/unit, tests/integration ----------
+pytest==8.2.2
+pytest-asyncio==0.23.7
+httpx==0.27.0
+
+# ---------- [MVP] Frontend (Wk6) — frontend/ ----------
+streamlit==1.36.0
+
+# ==============================================================
+# ---------- [P2] Multi-Agent Orchestration (Wk7-8) — agents/ ----------
+langgraph==0.1.5
+langchain-openai==0.1.13
+langchain-anthropic==0.1.19
+
+# ---------- [P2] eCommerce Integrations (Wk10) — integrations/ ----------
+ShopifyAPI==12.5.0
+cohere==5.5.8
+
+# ---------- [P2] Security hardening (Wk11) — security/ ----------
+slowapi==0.1.9
+presidio-analyzer==2.2.354
+cryptography==42.0.8
+
+# ---------- [P2] Observability (Wk12) — observability/ ----------
+prometheus-client==0.20.0
+opentelemetry-api==1.25.0
+opentelemetry-sdk==1.25.0
+langsmith==0.1.83
+
+# ---------- [P2] Load testing — tests/load/ ----------
+locust==2.29.0
+
+# ==============================================================
+# ---------- [P3] Payments — integrations/stripe_client.py etc. ----------
+stripe==9.9.0
+razorpay==1.4.2
+
+# ---------- [P3] Voice — integrations/deepgram_client.py, elevenlabs_client.py ----------
+deepgram-sdk==3.4.0
+elevenlabs==1.4.1
+
+# ---------- [P3] Notifications — integrations/ ----------
+twilio==9.2.3
+slack-sdk==3.30.0
+sendgrid==6.11.0
+
+# ---------- [P3] Fine-tuning — fine_tuning/ ----------
+peft==0.11.1
+bitsandbytes==0.43.1
+accelerate==0.31.0
+trl==0.9.4
+
+# ---------- [P3] Security testing — tests/security_tests/ ----------
+# (OWASP/prompt-injection tests use pytest + httpx, already listed above)
